@@ -1,4 +1,4 @@
-drop database CUAHANGDIENTHOAI
+Create database CUAHANGDIENTHOAI
 go
 
 use CUAHANGDIENTHOAI
@@ -46,69 +46,78 @@ create table tb_ProductDetai(
 	ModifiedDate datetime ,
 	Modifeby nvarchar(max),
 	Alias nvarchar(250)Null,
-	
-
-	
 	IsActive bit,
-	
-
 	IsHome bit ,
 	IsSale bit ,
 	IsFeature bit,
 	IsHot bit ,
-	
 	SeoTitle nvarchar(250),
 	SeoDescription nvarchar(250),
-	
+
+
+	ProductCode nvarchar(50),
+	Price decimal(18,2),
+	PriceSale decimal(18,2),
+	OrigianlPrice decimal(18,2),
+	Quantity int ,
+
+	TypeProduct bit ,
 
 	ProductCompanyId int,
 )
 go
---San Pham Moi
-create table tb_ProductNew(
-	ProductNewId int IDENTITY(1,1) not null primary key ,
-	CreatedBy nvarchar(250),
-	CreateDate DateTime ,
-	ModifiedDate datetime ,
-	Modifeby nvarchar(max),
-	Alias nvarchar(250)Null,
-	ProductCode nvarchar(50),
-	Price decimal(18,2),
-	PriceSale decimal(18,2),
-	OrigianlPrice decimal(18,2),
-	Quantity int ,
-	ViewCount int  Not NUll,
-	ProductDetaiId int
-)
-go
 
 
---Sản phẩm cũ & Máy trôi
-create table tb_ProducOld(
-	ProducOldId int IDENTITY(1,1) not null primary key ,
-	CreatedBy nvarchar(250),
-	CreateDate DateTime ,
-	ModifiedDate datetime ,
-	Modifeby nvarchar(max),
-	Alias nvarchar(250)Null,
-	ProductCode nvarchar(50),
-	Price decimal(18,2),
-	PriceSale decimal(18,2),
-	OrigianlPrice decimal(18,2),
-	Quantity int ,
-	ViewCount int  Not NUll,
-	ProductDetaiId int
-)
-go
+
+
+
+
+
+----San Pham Moi
+--create table tb_ProductNew(
+--	ProductNewId int IDENTITY(1,1) not null primary key ,
+--	CreatedBy nvarchar(250),
+--	CreateDate DateTime ,
+--	ModifiedDate datetime ,
+--	Modifeby nvarchar(max),
+--	Alias nvarchar(250)Null,
+--	ProductCode nvarchar(50),
+--	Price decimal(18,2),
+--	PriceSale decimal(18,2),
+--	OrigianlPrice decimal(18,2),
+--	Quantity int ,
+--	ViewCount int  Not NUll,
+--	ProductDetaiId int
+--)
+--go
+
+
+----Sản phẩm cũ & Máy trôi
+--create table tb_ProducOld(
+--	ProducOldId int IDENTITY(1,1) not null primary key ,
+--	CreatedBy nvarchar(250),
+--	CreateDate DateTime ,
+--	ModifiedDate datetime ,
+--	Modifeby nvarchar(max),
+--	Alias nvarchar(250)Null,
+--	ProductCode nvarchar(50),
+--	Price decimal(18,2),
+--	PriceSale decimal(18,2),
+--	OrigianlPrice decimal(18,2),
+--	Quantity int ,
+--	ViewCount int  Not NUll,
+--	ProductDetaiId int
+--)
+--go
 
 
 --Hệ điều hành & CPU Sản phẩm
 create table tb_ProductDetailProcessor(
-		ProductDetailProcessorId int IDENTITY(1,1) not null primary key ,
-		HeDieuHanh nvarchar(250),
-		CPU char(100),
+	ProductDetailProcessorId int IDENTITY(1,1) not null primary key ,
+	HeDieuHanh nvarchar(250),
+	CPU char(100),
 	TocDoCPU nvarchar(300),	
-GPU char (100),
+	GPU char (100),
 	TocDoGPU nvarchar(300),
 	ProductDetaiId int 
 )
@@ -162,15 +171,15 @@ Create table tb_ProductImage(
 go
 
 
---Hình Sản phẩm cũ
-Create table tb_ProductOldImage(
-	ProductImageId int IDENTITY(1,1) NOT NULL  primary key ,
-	ProducOldId int NOT NULL,
-	Image nvarchar(max) NULL,
-	IsDefault bit NOT NULL,
+----Hình Sản phẩm cũ
+--Create table tb_ProductOldImage(
+--	ProductImageId int IDENTITY(1,1) NOT NULL  primary key ,
+--	ProducOldId int NOT NULL,
+--	Image nvarchar(max) NULL,
+--	IsDefault bit NOT NULL,
 	
-)
-go
+--)
+--go
 
 
 
@@ -232,8 +241,81 @@ create  table tb_Role (
 	PRIMARY KEY(NhanVienId,IdChucNang)
 )
 go
+------------------------------------Khách hàng
+create  TABLE tb_KhachHang (
+	IdKhachHang  int IDENTITY(1,1) NOT NULL primary key ,
+    SDT VARCHAR(15)null ,
+    TenKhachHang NVARCHAR(max) not null,
+    Email VARCHAR(100)null,
+    Password  varchar(100) ,
+	Image nvarchar(250) null,
+	Birthday Date null ,
+	DiaChi nvarchar(max)null,
+	SoLanMua int, 
+	Code char(10),
+	Clock bit
+)
+go
 
 
+------------------------------------Gio Hàng
+
+create table tb_Cart(
+	CartId int IDENTITY(1,1) NOT NULL primary key ,
+	IdKhachHang  int,
+)
+go
+
+create table tb_CartItem (
+	CartItem int IDENTITY(1,1) NOT NULL primary key ,
+	CartId int NOT NULL,
+	Quantity int NOT NULL,
+	Price decimal (18,0) Not null,
+	PriceTotal decimal (18,0) Not null,
+	TemPrice decimal (18,0) not null,	
+	ProductDetaiId int NOT NULL,
+)
+go
+
+
+------------------------------------Order
+
+create table tb_Order(
+	OrderId int IDENTITY(1,1) NOT NULL primary key,
+	Code nvarchar(max) NOT NULL,
+	CustomerName nvarchar(max) NOT NULL,
+	Phone nvarchar(max) NOT NULL,
+	Address nvarchar(max) NOT NULL,
+	TotalAmount [decimal](18, 2) NOT NULL,
+	Quantity int NOT NULL,
+	CreatedBy nvarchar(max) NULL,
+	CreatedDate datetime NOT NULL,
+	ModifiedDate datetime NOT NULL,
+	Modifiedby nvarchar(max) NULL,
+	TypePayment int NOT NULL,
+	Email nvarchar(max) NULL,
+	
+	typeOrder bit,
+	Confirm bit,
+	Status nvarchar(max),
+	typeReturn bit,
+	Success bit,
+	SuccessDate datetime,
+	IdKhachHang int 
+)
+go
+
+create table tb_OrderDetail (
+	OrderDetailId int IDENTITY(1,1) NOT NULL primary key ,
+	Price decimal(18, 2) NOT NULL,
+	Quantity int NOT NULL,
+	CartItem int,
+	DamagedProduct bit,
+	OrderId int ,
+	IdKhachHang int ,
+	ProductDetaiId int
+)
+go
 
 
 ------------------------------------Kho hàng
@@ -267,22 +349,50 @@ go
 
 
 
-
+--Xuất Kho
 create table tb_ExportWareHouse(
 	ExportWareHouseId int IDENTITY(1,1) NOT NULL  primary key ,
 	CreatedBy nvarchar(250),
 	CreateDate DateTime ,
 	ModifiedDate datetime ,
 	Modifeby nvarchar(max),
+	NhanVienId int,
+	OrderId int,
 	WarehouseId int 
+)
+go
+
+--Hang trả
+create table tb_Return (
+	ReturnId int IDENTITY(1,1) not null primary key ,
+	Code nvarchar(max) NOT NULL,
+	CreateDate datetime,
+	Confirm bit ,
+	OrderId int ,
+	IdKhachHang int,
+	Satus nvarchar(max)
 )
 go
 
 
 
+create table tb_ReturnDetail (
+	Id int IDENTITY(1,1) NOT NULL primary key ,
+	ReturnId int NOT NULL,
+	Price decimal(18, 2) NOT NULL,
+	Quantity int NOT NULL,
+	ProductDetaiId int
+)
+go
+
+alter table tb_Return
+add constraint ReturntoKhachHang
+foreign key (IdKhachHang)
+references tb_KhachHang
 
 
---===================================================================FK==============================
+
+--====================================================================================FK============================================================
 
 --San Pham
 alter table tb_ProductCompany
@@ -323,22 +433,22 @@ add constraint ProductstoProductImage
 foreign key (ProductDetaiId)
 references tb_ProductDetai 
 
-alter table tb_ProductNew
-add constraint ProductNewtoProductDetai
-foreign key (ProductDetaiId)
-references tb_ProductDetai 
+--alter table tb_ProductNew
+--add constraint ProductNewtoProductDetai
+--foreign key (ProductDetaiId)
+--references tb_ProductDetai 
 
-alter table tb_ProducOld
-add constraint ProducOldtoProductDetai
-foreign key (ProductDetaiId)
-references tb_ProductDetai 
+--alter table tb_ProducOld
+--add constraint ProducOldtoProductDetai
+--foreign key (ProductDetaiId)
+--references tb_ProductDetai 
 
-alter table tb_ProductOldImage
-add constraint ProductOldImagetoProducOld
-foreign key (ProducOldId)
-references tb_ProducOld 
+--alter table tb_ProductOldImage
+--add constraint ProductOldImagetoProducOld
+--foreign key (ProducOldId)
+--references tb_ProducOld 
 
---Nhan Vien
+------------------Nhan Vien
 
 alter table tb_Role
 add constraint RoletoStaff
@@ -361,3 +471,91 @@ alter table   tb_Staff
 add constraint StafftoImage
 foreign key (NhanVienId)
 references tb_StaffImage
+
+
+
+------------------Gio Hang
+
+alter table tb_Cart
+add constraint GioHangtoKhachHang
+foreign key (IdKhachHang)
+references tb_KhachHang 
+
+
+ alter table tb_CartItem
+add constraint CartItemtoProducdetai
+foreign key (ProductDetaiId)
+references tb_ProductDetai
+
+
+alter table tb_CartItem
+add constraint CartItemtoCart
+foreign key (CartId)
+references tb_Cart 
+
+
+------------------Order
+
+alter table tb_OrderDetail
+add constraint OrderDetailtoOrder 
+foreign key (OrderId)
+references tb_Order 
+
+
+
+alter table tb_OrderDetail
+add constraint OrderDetailtKhachHang
+foreign key (IdKhachHang)
+references tb_KhachHang
+
+
+
+alter table tb_OrderDetail
+add constraint OrderDetailtoProductDetai
+foreign key (ProductDetaiId)
+references tb_ProductDetai
+
+
+------------------ FK_WareHosue
+
+alter table tb_ExportWareHouse
+add constraint ExportWareHousetoOrder
+foreign key (OrderId)
+references tb_Order
+
+
+alter table tb_ExportWareHouse
+add constraint ExportWareHousetoWareHouse
+foreign key (WarehouseId)
+references tb_WareHouse
+
+
+alter table tb_ExportWareHouse
+add constraint ExportWareHousetoStaff
+foreign key (NhanVienId)
+references tb_Staff
+
+
+------------------ FK_Hàng Trả
+alter table tb_ReturnDetail
+add constraint ReturnDetailtoReturn
+foreign key (ReturnId)
+references tb_Return
+
+
+alter table tb_ReturnDetail
+add constraint ReturnDetailtoProductDetai
+foreign key (ProductDetaiId)
+references tb_ProductDetai
+
+
+alter table tb_Return
+add constraint ReturntoOrder
+foreign key (OrderId)
+references tb_Order
+
+
+alter table tb_Return
+add constraint ReturntoKhachHang
+foreign key (IdKhachHang)
+references tb_KhachHang
