@@ -361,11 +361,34 @@ create table tb_ExportWareHouse(
 	WarehouseId int 
 )
 go
-alter table tb_ExportWareHouse
-add constraint ExportWareHousetoOrder
-foreign key (OrderId)
-references tb_Order
 
+--Hang trả
+create table tb_Return (
+	ReturnId int IDENTITY(1,1) not null primary key ,
+	Code nvarchar(max) NOT NULL,
+	CreateDate datetime,
+	Confirm bit ,
+	OrderId int ,
+	IdKhachHang int,
+	Satus nvarchar(max)
+)
+go
+
+
+
+create table tb_ReturnDetail (
+	Id int IDENTITY(1,1) NOT NULL primary key ,
+	ReturnId int NOT NULL,
+	Price decimal(18, 2) NOT NULL,
+	Quantity int NOT NULL,
+	ProductDetaiId int
+)
+go
+
+alter table tb_Return
+add constraint ReturntoKhachHang
+foreign key (IdKhachHang)
+references tb_KhachHang
 
 
 
@@ -512,3 +535,27 @@ add constraint ExportWareHousetoStaff
 foreign key (NhanVienId)
 references tb_Staff
 
+
+------------------ FK_Hàng Trả
+alter table tb_ReturnDetail
+add constraint ReturnDetailtoReturn
+foreign key (ReturnId)
+references tb_Return
+
+
+alter table tb_ReturnDetail
+add constraint ReturnDetailtoProductDetai
+foreign key (ProductDetaiId)
+references tb_ProductDetai
+
+
+alter table tb_Return
+add constraint ReturntoOrder
+foreign key (OrderId)
+references tb_Order
+
+
+alter table tb_Return
+add constraint ReturntoKhachHang
+foreign key (IdKhachHang)
+references tb_KhachHang
