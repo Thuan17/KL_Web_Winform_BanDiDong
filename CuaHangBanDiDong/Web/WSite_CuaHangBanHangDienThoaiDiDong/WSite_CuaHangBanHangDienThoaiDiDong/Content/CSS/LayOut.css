@@ -1,0 +1,42 @@
+﻿.navPhone1 {
+    list-style: none;
+    text-decoration: none;
+    display: none;
+    position: absolute;
+    width: 1000px;
+    height: 100px;
+    
+    right: 600px;
+   
+    /*left: -140px;*/
+    /*z-index: 999;*/
+}
+
+
+
+.navPhone:hover .navPhone1 {
+    display: block;
+}
+
+
+
+
+.navPhone1 li a {
+    
+    color: black;
+    display: block;
+   padding: 12px 80px 12px 10px;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+
+.navPhone1 li {
+    border-radius: 15px;
+    background-color:lightgray;
+    padding: 0px;
+}
+
+    .navPhone1 li:hover a {
+        background-color: lightgray;
+    }
