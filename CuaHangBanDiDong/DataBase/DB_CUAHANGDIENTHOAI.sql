@@ -30,7 +30,7 @@ create table tb_ProductCompany(
 	ModifiedDate datetime ,
 	Modifeby nvarchar(max),
 	Alias nvarchar(250)Null,
-	ProductCategoryId int
+
 )
 go
 
@@ -60,57 +60,14 @@ create table tb_ProductDetai(
 	PriceSale decimal(18,2),
 	OrigianlPrice decimal(18,2),
 	Quantity int ,
+	Color int ,
 
 	TypeProduct bit ,
-
-	ProductCompanyId int,
-	Color int 
+	ProductCategoryId int,
+	ProductCompanyId int
+	
 )
 go
-alter table tb_ProductDetai 
-add  Color int 
-
-
-
-
-
-
-----San Pham Moi
---drop table tb_ProductNew(
---	ProductNewId int IDENTITY(1,1) not null primary key ,
---	CreatedBy nvarchar(250),
---	CreateDate DateTime ,
---	ModifiedDate datetime ,
---	Modifeby nvarchar(max),
---	Alias nvarchar(250)Null,
---	ProductCode nvarchar(50),
---	Price decimal(18,2),
---	PriceSale decimal(18,2),
---	OrigianlPrice decimal(18,2),
---	Quantity int ,
---	ViewCount int  Not NUll,
---	ProductDetaiId int
---)
---go
-
-
-----Sản phẩm cũ & Máy trôi
---drop table tb_ProducOld(
---	ProducOldId int IDENTITY(1,1) not null primary key ,
---	CreatedBy nvarchar(250),
---	CreateDate DateTime ,
---	ModifiedDate datetime ,
---	Modifeby nvarchar(max),
---	Alias nvarchar(250)Null,
---	ProductCode nvarchar(50),
---	Price decimal(18,2),
---	PriceSale decimal(18,2),
---	OrigianlPrice decimal(18,2),
---	Quantity int ,
---	ViewCount int  Not NUll,
---	ProductDetaiId int
---)
---go
 
 
 --Hệ điều hành & CPU Sản phẩm
@@ -433,10 +390,14 @@ go
 --====================================================================================FK============================================================
 
 --San Pham
-alter table tb_ProductCompany
-add constraint ProductstoProductCategory
+alter table tb_ProductDetai
+add constraint ProductDetaitoProductCategory
 foreign key (ProductCategoryId)
 references tb_ProductCategory 
+
+
+
+
 
 
 alter table  tb_ProductDetai

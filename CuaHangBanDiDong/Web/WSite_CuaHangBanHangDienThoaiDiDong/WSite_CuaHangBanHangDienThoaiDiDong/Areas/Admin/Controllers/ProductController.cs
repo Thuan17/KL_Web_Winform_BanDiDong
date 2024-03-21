@@ -17,10 +17,6 @@ namespace WSite_CuaHangBanHangDienThoaiDiDong.Areas.Admin.Controllers
 
 
 
-
-
-
-
         public ActionResult Index(int? page )
         {
             IEnumerable<tb_ProductDetai> items = db.tb_ProductDetai.OrderByDescending(x => x.ProductDetaiId);

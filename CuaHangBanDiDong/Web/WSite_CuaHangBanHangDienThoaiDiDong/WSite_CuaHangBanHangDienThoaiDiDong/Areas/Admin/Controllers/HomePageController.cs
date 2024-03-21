@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace WSite_CuaHangBanHangDienThoaiDiDong.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomePageController : Controller
     {
-        // GET: Admin/Home
+        // GET: Admin/HomePage
         public ActionResult Index()
         {
             return View();
