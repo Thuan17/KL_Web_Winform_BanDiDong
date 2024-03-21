@@ -1,0 +1,73 @@
+﻿.navPhone1 {
+    /*list-style: none;
+    text-decoration: none;
+    display: none;
+    position: absolute;*/
+    /* width: 1000px;
+    height: 100px;*/
+    /*border-radius: 15px;*/
+    /*  right: 600px;*/
+    /*padding-top: 10px;*/
+    /*left: -140px;*/
+    /*z-index: 999;*/
+    /*top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+
+
+
+
+    list-style: none;
+    text-decoration: none;
+    display: none;
+    position: absolute;
+    top: 70%; /* Đặt phần tử ul nằm dưới dòng header */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Đảm bảo phần tử ul nằm trên header */
+    background-color: #fff; /* Màu nền của menu */
+    padding: 3px; /* Phần padding để tạo khoảng cách cho các items */
+    width: 70%;
+}
+
+.navPhone {
+}
+
+    .navPhone:hover a {
+    }
+
+    .navPhone:hover .navPhone1 {
+        display: block;
+        border-radius: 10px;
+    }
+
+
+
+
+.navPhone1 li a {
+    color: black;
+    display: block;
+}
+
+#SanPham {
+   
+    font-size: 14px;
+}
+
+#SanPham:hover {
+    padding-left: 5px;
+    color: red;
+}
+
+.navPhone1 li {
+    border-radius: 10px;
+    background-color: whitesmoke;
+    /* padding: 0px;*/
+}
+
+    .navPhone1 li:hover a {
+       /* background-color: blue;*/
+       /*padding-left:5px;
+       color: red;*/
+    }
+    
