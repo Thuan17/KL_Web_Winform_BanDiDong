@@ -23,7 +23,7 @@ namespace WSite_CuaHangBanHangDienThoaiDiDong.Models
         public int WarehouseId { get; set; }
         public string DiaChi { get; set; }
         public string CreatedBy { get; set; }
-        public Nullable<System.DateTime> CreateDate { get; set; }
+        public System.DateTime CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public string Modifeby { get; set; }
     

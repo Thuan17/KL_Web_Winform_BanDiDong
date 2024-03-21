@@ -44,7 +44,7 @@
             <h3 class="card-title">Danh sách @ViewBag.Title</h3>
 
             <div class="card-tools">
-                <a href="/admin/ProductCategory/add" class="btn btn-primary">Thêm mới</a>
+                <a href="/admin/ProductCompany/add" class="btn btn-primary">Thêm mới</a>
                 @*<a href="#" class="btn btn-danger" id="BtnDeleteAll">Xóa</a>*@
             </div>
         </div>
@@ -56,6 +56,7 @@
                         <th><input type="checkbox" id="SelectAll" /></th>
                         <th>STT</th>
                         <th>Hãng</th>
+                        <th>Người tạo</th>
                         <th>Ngày tạo</th>
                         <th>Ngày chỉnh sửa</th>
                         @*<th>Hiển thị</th>*@
@@ -70,10 +71,11 @@
                         foreach (var item in Model)
                         {
                             <tr id="trow_@item.ProductCompanyId">
-                                <td><input type="checkbox" class="cbkItem" value="@item.ProductCategoryId" /></td>
+                                <td><input type="checkbox" class="cbkItem" value="@item.ProductCompanyId" /></td>
+                                <td>@i</td>
                                 <td> @item.Title </td>
-                                <td></td>
-                                @*<td> @item.CreateDate.ToString("")</td>*@
+                                <td>@item.CreatedBy</td>
+                                <td> @item.CreatedDate.ToString("")</td>
                                 <td>
                                     @if (item.Modifeby != null)
                                     {
@@ -85,6 +87,10 @@
                                             Chưa qua chỉnh sửa
                                         </p>
                                     }
+                                </td>
+                                <td>
+                                    <a href="/admin/productcompany/edit/@item.ProductCompanyId" class="btn btn-sm btn-primary">Sửa</a>
+                                    @*<a href="#" data-id="@item.ProductCategoryId" class="btn btn-sm btn-danger btnDelete">Xóa</a>*@
                                 </td>
                             </tr>
                             i++;

@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CUAHANGDIENTHOAIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="tb_Cart">
     <Key>
       <PropertyRef Name="CartId" />
@@ -34,8 +24,8 @@
       <PropertyRef Name="ExportWareHouseId" />
     </Key>
     <Property Name="ExportWareHouseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifeby" Type="nvarchar(max)" />
     <Property Name="NhanVienId" Type="int" />
@@ -49,8 +39,8 @@
     <Property Name="IdChucNang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenChucNang" Type="nvarchar(max)" />
     <Property Name="MaChucNang" Type="nvarchar(max)" />
-    <Property Name="Createby" Type="nvarchar(max)" />
-    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifeby" Type="nvarchar(max)" />
   </EntityType>
@@ -118,7 +108,7 @@
     <Property Name="Icon" Type="nvarchar" MaxLength="250" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
-    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifiedby" Type="nvarchar(max)" />
     <Property Name="Alias" Type="nvarchar" MaxLength="150" Nullable="false" />
   </EntityType>
@@ -128,12 +118,11 @@
     </Key>
     <Property Name="ProductCompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar(max)" />
-    <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifeby" Type="nvarchar(max)" />
     <Property Name="Alias" Type="nvarchar" MaxLength="250" />
-    <Property Name="ProductCategoryId" Type="int" />
   </EntityType>
   <EntityType Name="tb_ProductDetai">
     <Key>
@@ -141,8 +130,8 @@
     </Key>
     <Property Name="ProductDetaiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar(max)" />
-    <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifeby" Type="nvarchar(max)" />
     <Property Name="Alias" Type="nvarchar" MaxLength="250" />
@@ -158,9 +147,10 @@
     <Property Name="PriceSale" Type="decimal" Precision="18" Scale="2" />
     <Property Name="OrigianlPrice" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Quantity" Type="int" />
-    <Property Name="TypeProduct" Type="bit" />
-    <Property Name="ProductCompanyId" Type="int" />
     <Property Name="Color" Type="int" />
+    <Property Name="TypeProduct" Type="bit" />
+    <Property Name="ProductCategoryId" Type="int" />
+    <Property Name="ProductCompanyId" Type="int" />
   </EntityType>
   <EntityType Name="tb_ProductDetailConnect">
     <Key>
@@ -223,7 +213,7 @@
     </Key>
     <Property Name="ReturnId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
     <Property Name="Confirm" Type="bit" />
     <Property Name="OrderId" Type="int" />
     <Property Name="IdKhachHang" Type="int" />
@@ -244,8 +234,8 @@
       <PropertyRef Name="ReviewId" />
     </Key>
     <Property Name="ReviewId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifeby" Type="nvarchar(max)" />
     <Property Name="ProductDetaiId" Type="int" />
@@ -255,8 +245,8 @@
       <PropertyRef Name="ReviewDetailId" />
     </Key>
     <Property Name="ReviewDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifeby" Type="nvarchar(max)" />
     <Property Name="Content" Type="nvarchar" MaxLength="350" />
@@ -289,8 +279,10 @@
     <Property Name="NgayVaoLam" Type="date" />
     <Property Name="Luong" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="GioiTinh" Type="nvarchar" MaxLength="7" />
-    <Property Name="CreatedDate" Type="datetime" />
-    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="nvarchar(max)" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
     <Property Name="Clock" Type="bit" />
     <Property Name="IdChucNang" Type="int" />
   </EntityType>
@@ -311,8 +303,8 @@
     <Property Name="Code" Type="char" MaxLength="30" />
     <Property Name="PhanTramGiam" Type="int" />
     <Property Name="Title" Type="nvarchar" MaxLength="250" />
-    <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifeby" Type="nvarchar(max)" />
     <Property Name="UsedBy" Type="nvarchar" MaxLength="250" />
@@ -326,8 +318,8 @@
     </Key>
     <Property Name="WarehouseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
-    <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Modifeby" Type="nvarchar(max)" />
   </EntityType>
@@ -451,14 +443,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="ProductstoProductCategory">
+  <Association Name="ProductDetaitoProductCategory">
     <End Role="tb_ProductCategory" Type="Self.tb_ProductCategory" Multiplicity="0..1" />
-    <End Role="tb_ProductCompany" Type="Self.tb_ProductCompany" Multiplicity="*" />
+    <End Role="tb_ProductDetai" Type="Self.tb_ProductDetai" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_ProductCategory">
         <PropertyRef Name="ProductCategoryId" />
       </Principal>
-      <Dependent Role="tb_ProductCompany">
+      <Dependent Role="tb_ProductDetai">
         <PropertyRef Name="ProductCategoryId" />
       </Dependent>
     </ReferentialConstraint>
@@ -668,7 +660,6 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="CUAHANGDIENTHOAIModelStoreContainer">
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Cart" EntityType="Self.tb_Cart" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_CartItem" EntityType="Self.tb_CartItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_ExportWareHouse" EntityType="Self.tb_ExportWareHouse" Schema="dbo" store:Type="Tables" />
@@ -733,9 +724,9 @@
       <End Role="tb_ProductCompany" EntitySet="tb_ProductCompany" />
       <End Role="tb_ProductDetai" EntitySet="tb_ProductDetai" />
     </AssociationSet>
-    <AssociationSet Name="ProductstoProductCategory" Association="Self.ProductstoProductCategory">
+    <AssociationSet Name="ProductDetaitoProductCategory" Association="Self.ProductDetaitoProductCategory">
       <End Role="tb_ProductCategory" EntitySet="tb_ProductCategory" />
-      <End Role="tb_ProductCompany" EntitySet="tb_ProductCompany" />
+      <End Role="tb_ProductDetai" EntitySet="tb_ProductDetai" />
     </AssociationSet>
     <AssociationSet Name="ProductstoProductDetailConnect" Association="Self.ProductstoProductDetailConnect">
       <End Role="tb_ProductDetai" EntitySet="tb_ProductDetai" />

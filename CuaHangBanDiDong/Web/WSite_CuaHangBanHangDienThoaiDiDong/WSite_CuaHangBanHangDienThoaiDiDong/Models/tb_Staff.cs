@@ -34,8 +34,10 @@ namespace WSite_CuaHangBanHangDienThoaiDiDong.Models
         public Nullable<System.DateTime> NgayVaoLam { get; set; }
         public decimal Luong { get; set; }
         public string GioiTinh { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<System.DateTime> ModifiedDate { get; set; }
+        public string CreatedBy { get; set; }
+        public System.DateTime CreatedDate { get; set; }
+        public string ModifiedBy { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
         public Nullable<bool> Clock { get; set; }
         public Nullable<int> IdChucNang { get; set; }
     

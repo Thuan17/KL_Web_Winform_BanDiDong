@@ -4,32 +4,31 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="335dfbfd26fe470484ed934b0d57e176" Name="Diagram1">
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Cart" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_CartItem" Width="1.5" PointX="10.5" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ExportWareHouse" Width="1.5" PointX="18.25" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Function" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_KhachHang" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Order" Width="1.5" PointX="5.25" PointY="21.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_OrderDetail" Width="1.5" PointX="7.5" PointY="11.25" IsExpanded="true" />
+      <Diagram DiagramId="0263ac63801a46fd9a677e73aa56427a" Name="Diagram1">
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Cart" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_CartItem" Width="1.5" PointX="8.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ExportWareHouse" Width="1.5" PointX="16.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Function" Width="1.5" PointX="8.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_KhachHang" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Order" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_OrderDetail" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductCategory" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductCompany" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetai" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetailConnect" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetailMemory" Width="1.5" PointX="7.5" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetailPin" Width="1.5" PointX="7.5" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetailProcessor" Width="1.5" PointX="7.5" PointY="24.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductImage" Width="1.5" PointX="7.5" PointY="28" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Return" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ReturnDetail" Width="1.5" PointX="10.5" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Review" Width="1.5" PointX="7.5" PointY="33.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ReviewDetail" Width="1.5" PointX="9.75" PointY="33.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Role" Width="1.5" PointX="13" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Staff" Width="1.5" PointX="16" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_StaffImage" Width="1.5" PointX="13.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Voucher" Width="1.5" PointX="7.5" PointY="37.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Warehouse" Width="1.5" PointX="16" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductCompany" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetai" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetailConnect" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetailMemory" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetailPin" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetailProcessor" Width="1.5" PointX="5.25" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductImage" Width="1.5" PointX="5.25" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Return" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ReturnDetail" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Review" Width="1.5" PointX="5.25" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ReviewDetail" Width="1.5" PointX="7.5" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Role" Width="1.5" PointX="11" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Staff" Width="1.5" PointX="14" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_StaffImage" Width="1.5" PointX="11.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Voucher" Width="1.5" PointX="5.25" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Warehouse" Width="1.5" PointX="14" PointY="14.125" IsExpanded="true" />
         <AssociationConnector Association="CUAHANGDIENTHOAIModel.CartItemtoCart" ManuallyRouted="false" />
         <AssociationConnector Association="CUAHANGDIENTHOAIModel.GioHangtoKhachHang" ManuallyRouted="false" />
         <AssociationConnector Association="CUAHANGDIENTHOAIModel.CartItemtoProducdetai" ManuallyRouted="false" />
@@ -45,7 +44,7 @@
         <AssociationConnector Association="CUAHANGDIENTHOAIModel.ReturntoOrder" ManuallyRouted="false" />
         <AssociationConnector Association="CUAHANGDIENTHOAIModel.VouchertoOrder" ManuallyRouted="false" />
         <AssociationConnector Association="CUAHANGDIENTHOAIModel.OrderDetailtoProductDetai" ManuallyRouted="false" />
-        <AssociationConnector Association="CUAHANGDIENTHOAIModel.ProductstoProductCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="CUAHANGDIENTHOAIModel.ProductDetaitoProductCategory" ManuallyRouted="false" />
         <AssociationConnector Association="CUAHANGDIENTHOAIModel.ProductCompanytoProductDetai" ManuallyRouted="false" />
         <AssociationConnector Association="CUAHANGDIENTHOAIModel.ProductstoProductDetailConnect" ManuallyRouted="false" />
         <AssociationConnector Association="CUAHANGDIENTHOAIModel.ProductstoProductDetailMemory" ManuallyRouted="false" />

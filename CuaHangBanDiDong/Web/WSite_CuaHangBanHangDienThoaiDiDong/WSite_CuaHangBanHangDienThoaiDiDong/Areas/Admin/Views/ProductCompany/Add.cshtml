@@ -1,4 +1,4 @@
-﻿
+﻿@model WSite_CuaHangBanHangDienThoaiDiDong.Models.tb_ProductCompany
 @{
     ViewBag.Title = "Thêm hãng sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
@@ -28,11 +28,11 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>TThêm hãng sản phẩm</h1>
+                <h1>Thêm hãng sản phẩm</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Tin tức</a></li>
+                    <li class="breadcrumb-item"><a href="#">Nhà sản xuất</a></li>
                     <li class="breadcrumb-item active">Thêm mới</li>
                 </ol>
             </div>
@@ -42,7 +42,59 @@
 
 
 <section class="content">
-    @Html.Action("Partial_AddProcuctCompany", "ProductCompany")
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Thông tin thêm mới Tin tức</h3>
+        </div>
+        <div class="card-body">
+            <div class="bs-stepper-content">
+                @using (Html.BeginForm("Add", "ProductCompany", FormMethod.Post, new { }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <!-- your steps content here -->
+                    <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Hãng </label>
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Tiêu đề" })
+                            @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
+                        </div>
+                        @if (ViewBag.txt != null)
+                        {
+                            <p class="text-danger">Vui lòng nhập ...</p>
+                        }
+
+                       
+                        @*<div class="form-group">
+                                <label for="exampleInputPassword1">Seo title</label>
+                                @Html.TextAreaFor(x => x.SeoTitle, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">SeoDescription</label>
+                                @Html.TextAreaFor(x => x.SeoDescription, new { @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">SeoKeywords</label>
+                                @Html.TextAreaFor(x => x.SeoKeywords, new { @class = "form-control" })
+                            </div>*@
+                        <div class="form-group">
+
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <a href="/Admin/ProductCategory/index" class="btn btn-danger">Quay lại</a>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+        <div class="card-footer">
+
+        </div>
+
+    </div>
+
 
 </section>
 

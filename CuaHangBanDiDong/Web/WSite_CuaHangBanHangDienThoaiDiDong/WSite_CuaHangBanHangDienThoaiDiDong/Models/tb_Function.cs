@@ -24,8 +24,8 @@ namespace WSite_CuaHangBanHangDienThoaiDiDong.Models
         public int IdChucNang { get; set; }
         public string TenChucNang { get; set; }
         public string MaChucNang { get; set; }
-        public string Createby { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public string CreatedBy { get; set; }
+        public System.DateTime CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public string Modifeby { get; set; }
     

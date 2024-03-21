@@ -5,16 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="CUAHANGDIENTHOAIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="tb_Cart">
           <Key>
             <PropertyRef Name="CartId" />
@@ -39,8 +29,8 @@
             <PropertyRef Name="ExportWareHouseId" />
           </Key>
           <Property Name="ExportWareHouseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifeby" Type="nvarchar(max)" />
           <Property Name="NhanVienId" Type="int" />
@@ -54,8 +44,8 @@
           <Property Name="IdChucNang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenChucNang" Type="nvarchar(max)" />
           <Property Name="MaChucNang" Type="nvarchar(max)" />
-          <Property Name="Createby" Type="nvarchar(max)" />
-          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifeby" Type="nvarchar(max)" />
         </EntityType>
@@ -123,7 +113,7 @@
           <Property Name="Icon" Type="nvarchar" MaxLength="250" />
           <Property Name="CreatedBy" Type="nvarchar(max)" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
-          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifiedby" Type="nvarchar(max)" />
           <Property Name="Alias" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
@@ -133,12 +123,11 @@
           </Key>
           <Property Name="ProductCompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar(max)" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifeby" Type="nvarchar(max)" />
           <Property Name="Alias" Type="nvarchar" MaxLength="250" />
-          <Property Name="ProductCategoryId" Type="int" />
         </EntityType>
         <EntityType Name="tb_ProductDetai">
           <Key>
@@ -146,8 +135,8 @@
           </Key>
           <Property Name="ProductDetaiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar(max)" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifeby" Type="nvarchar(max)" />
           <Property Name="Alias" Type="nvarchar" MaxLength="250" />
@@ -163,9 +152,10 @@
           <Property Name="PriceSale" Type="decimal" Precision="18" Scale="2" />
           <Property Name="OrigianlPrice" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Quantity" Type="int" />
-          <Property Name="TypeProduct" Type="bit" />
-          <Property Name="ProductCompanyId" Type="int" />
           <Property Name="Color" Type="int" />
+          <Property Name="TypeProduct" Type="bit" />
+          <Property Name="ProductCategoryId" Type="int" />
+          <Property Name="ProductCompanyId" Type="int" />
         </EntityType>
         <EntityType Name="tb_ProductDetailConnect">
           <Key>
@@ -228,7 +218,7 @@
           </Key>
           <Property Name="ReturnId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreatedDate" Type="datetime" />
           <Property Name="Confirm" Type="bit" />
           <Property Name="OrderId" Type="int" />
           <Property Name="IdKhachHang" Type="int" />
@@ -249,8 +239,8 @@
             <PropertyRef Name="ReviewId" />
           </Key>
           <Property Name="ReviewId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifeby" Type="nvarchar(max)" />
           <Property Name="ProductDetaiId" Type="int" />
@@ -260,8 +250,8 @@
             <PropertyRef Name="ReviewDetailId" />
           </Key>
           <Property Name="ReviewDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifeby" Type="nvarchar(max)" />
           <Property Name="Content" Type="nvarchar" MaxLength="350" />
@@ -294,8 +284,10 @@
           <Property Name="NgayVaoLam" Type="date" />
           <Property Name="Luong" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="GioiTinh" Type="nvarchar" MaxLength="7" />
-          <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
           <Property Name="Clock" Type="bit" />
           <Property Name="IdChucNang" Type="int" />
         </EntityType>
@@ -316,8 +308,8 @@
           <Property Name="Code" Type="char" MaxLength="30" />
           <Property Name="PhanTramGiam" Type="int" />
           <Property Name="Title" Type="nvarchar" MaxLength="250" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifeby" Type="nvarchar(max)" />
           <Property Name="UsedBy" Type="nvarchar" MaxLength="250" />
@@ -331,8 +323,8 @@
           </Key>
           <Property Name="WarehouseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
-          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Modifeby" Type="nvarchar(max)" />
         </EntityType>
@@ -456,14 +448,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="ProductstoProductCategory">
+        <Association Name="ProductDetaitoProductCategory">
           <End Role="tb_ProductCategory" Type="Self.tb_ProductCategory" Multiplicity="0..1" />
-          <End Role="tb_ProductCompany" Type="Self.tb_ProductCompany" Multiplicity="*" />
+          <End Role="tb_ProductDetai" Type="Self.tb_ProductDetai" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_ProductCategory">
               <PropertyRef Name="ProductCategoryId" />
             </Principal>
-            <Dependent Role="tb_ProductCompany">
+            <Dependent Role="tb_ProductDetai">
               <PropertyRef Name="ProductCategoryId" />
             </Dependent>
           </ReferentialConstraint>
@@ -673,7 +665,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CUAHANGDIENTHOAIModelStoreContainer">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_Cart" EntityType="Self.tb_Cart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_CartItem" EntityType="Self.tb_CartItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_ExportWareHouse" EntityType="Self.tb_ExportWareHouse" Schema="dbo" store:Type="Tables" />
@@ -738,9 +729,9 @@
             <End Role="tb_ProductCompany" EntitySet="tb_ProductCompany" />
             <End Role="tb_ProductDetai" EntitySet="tb_ProductDetai" />
           </AssociationSet>
-          <AssociationSet Name="ProductstoProductCategory" Association="Self.ProductstoProductCategory">
+          <AssociationSet Name="ProductDetaitoProductCategory" Association="Self.ProductDetaitoProductCategory">
             <End Role="tb_ProductCategory" EntitySet="tb_ProductCategory" />
-            <End Role="tb_ProductCompany" EntitySet="tb_ProductCompany" />
+            <End Role="tb_ProductDetai" EntitySet="tb_ProductDetai" />
           </AssociationSet>
           <AssociationSet Name="ProductstoProductDetailConnect" Association="Self.ProductstoProductDetailConnect">
             <End Role="tb_ProductDetai" EntitySet="tb_ProductDetai" />
@@ -816,16 +807,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CUAHANGDIENTHOAIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="tb_Cart">
           <Key>
             <PropertyRef Name="CartId" />
@@ -854,8 +835,8 @@
             <PropertyRef Name="ExportWareHouseId" />
           </Key>
           <Property Name="ExportWareHouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifeby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NhanVienId" Type="Int32" />
@@ -872,8 +853,8 @@
           <Property Name="IdChucNang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenChucNang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MaChucNang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Createby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifeby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tb_Role" Relationship="Self.RoletoFunction" FromRole="tb_Function" ToRole="tb_Role" />
@@ -954,10 +935,10 @@
           <Property Name="Icon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifiedby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Alias" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tb_ProductCompany" Relationship="Self.ProductstoProductCategory" FromRole="tb_ProductCategory" ToRole="tb_ProductCompany" />
+          <NavigationProperty Name="tb_ProductDetai" Relationship="Self.ProductDetaitoProductCategory" FromRole="tb_ProductCategory" ToRole="tb_ProductDetai" />
         </EntityType>
         <EntityType Name="tb_ProductCompany">
           <Key>
@@ -965,13 +946,11 @@
           </Key>
           <Property Name="ProductCompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifeby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Alias" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="ProductCategoryId" Type="Int32" />
-          <NavigationProperty Name="tb_ProductCategory" Relationship="Self.ProductstoProductCategory" FromRole="tb_ProductCompany" ToRole="tb_ProductCategory" />
           <NavigationProperty Name="tb_ProductDetai" Relationship="Self.ProductCompanytoProductDetai" FromRole="tb_ProductCompany" ToRole="tb_ProductDetai" />
         </EntityType>
         <EntityType Name="tb_ProductDetai">
@@ -980,8 +959,8 @@
           </Key>
           <Property Name="ProductDetaiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifeby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Alias" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
@@ -997,11 +976,13 @@
           <Property Name="PriceSale" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="OrigianlPrice" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Quantity" Type="Int32" />
-          <Property Name="TypeProduct" Type="Boolean" />
-          <Property Name="ProductCompanyId" Type="Int32" />
           <Property Name="Color" Type="Int32" />
+          <Property Name="TypeProduct" Type="Boolean" />
+          <Property Name="ProductCategoryId" Type="Int32" />
+          <Property Name="ProductCompanyId" Type="Int32" />
           <NavigationProperty Name="tb_CartItem" Relationship="Self.CartItemtoProducdetai" FromRole="tb_ProductDetai" ToRole="tb_CartItem" />
           <NavigationProperty Name="tb_OrderDetail" Relationship="Self.OrderDetailtoProductDetai" FromRole="tb_ProductDetai" ToRole="tb_OrderDetail" />
+          <NavigationProperty Name="tb_ProductCategory" Relationship="Self.ProductDetaitoProductCategory" FromRole="tb_ProductDetai" ToRole="tb_ProductCategory" />
           <NavigationProperty Name="tb_ProductCompany" Relationship="Self.ProductCompanytoProductDetai" FromRole="tb_ProductDetai" ToRole="tb_ProductCompany" />
           <NavigationProperty Name="tb_ProductDetailConnect" Relationship="Self.ProductstoProductDetailConnect" FromRole="tb_ProductDetai" ToRole="tb_ProductDetailConnect" />
           <NavigationProperty Name="tb_ProductDetailMemory" Relationship="Self.ProductstoProductDetailMemory" FromRole="tb_ProductDetai" ToRole="tb_ProductDetailMemory" />
@@ -1077,7 +1058,7 @@
           </Key>
           <Property Name="ReturnId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="Confirm" Type="Boolean" />
           <Property Name="OrderId" Type="Int32" />
           <Property Name="IdKhachHang" Type="Int32" />
@@ -1103,8 +1084,8 @@
             <PropertyRef Name="ReviewId" />
           </Key>
           <Property Name="ReviewId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifeby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ProductDetaiId" Type="Int32" />
@@ -1116,8 +1097,8 @@
             <PropertyRef Name="ReviewDetailId" />
           </Key>
           <Property Name="ReviewDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifeby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Content" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
@@ -1154,8 +1135,10 @@
           <Property Name="NgayVaoLam" Type="DateTime" Precision="0" />
           <Property Name="Luong" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="GioiTinh" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Clock" Type="Boolean" />
           <Property Name="IdChucNang" Type="Int32" />
           <NavigationProperty Name="tb_ExportWareHouse" Relationship="Self.ExportWareHousetoStaff" FromRole="tb_Staff" ToRole="tb_ExportWareHouse" />
@@ -1181,8 +1164,8 @@
           <Property Name="Code" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
           <Property Name="PhanTramGiam" Type="Int32" />
           <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifeby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UsedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
@@ -1197,8 +1180,8 @@
           </Key>
           <Property Name="WarehouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DiaChi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="Modifeby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tb_ExportWareHouse" Relationship="Self.ExportWareHousetoWareHouse" FromRole="tb_Warehouse" ToRole="tb_ExportWareHouse" />
@@ -1383,14 +1366,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="ProductstoProductCategory">
+        <Association Name="ProductDetaitoProductCategory">
           <End Role="tb_ProductCategory" Type="Self.tb_ProductCategory" Multiplicity="0..1" />
-          <End Role="tb_ProductCompany" Type="Self.tb_ProductCompany" Multiplicity="*" />
+          <End Role="tb_ProductDetai" Type="Self.tb_ProductDetai" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_ProductCategory">
               <PropertyRef Name="ProductCategoryId" />
             </Principal>
-            <Dependent Role="tb_ProductCompany">
+            <Dependent Role="tb_ProductDetai">
               <PropertyRef Name="ProductCategoryId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1540,7 +1523,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CUAHANGDIENTHOAIEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="tb_Cart" EntityType="Self.tb_Cart" />
           <EntitySet Name="tb_CartItem" EntityType="Self.tb_CartItem" />
           <EntitySet Name="tb_ExportWareHouse" EntityType="Self.tb_ExportWareHouse" />
@@ -1625,9 +1607,9 @@
             <End Role="tb_ProductDetai" EntitySet="tb_ProductDetai" />
             <End Role="tb_OrderDetail" EntitySet="tb_OrderDetail" />
           </AssociationSet>
-          <AssociationSet Name="ProductstoProductCategory" Association="Self.ProductstoProductCategory">
+          <AssociationSet Name="ProductDetaitoProductCategory" Association="Self.ProductDetaitoProductCategory">
             <End Role="tb_ProductCategory" EntitySet="tb_ProductCategory" />
-            <End Role="tb_ProductCompany" EntitySet="tb_ProductCompany" />
+            <End Role="tb_ProductDetai" EntitySet="tb_ProductDetai" />
           </AssociationSet>
           <AssociationSet Name="ProductCompanytoProductDetai" Association="Self.ProductCompanytoProductDetai">
             <End Role="tb_ProductCompany" EntitySet="tb_ProductCompany" />
@@ -1684,17 +1666,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="CUAHANGDIENTHOAIModelStoreContainer" CdmEntityContainer="CUAHANGDIENTHOAIEntities">
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="CUAHANGDIENTHOAIModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tb_Cart">
             <EntityTypeMapping TypeName="CUAHANGDIENTHOAIModel.tb_Cart">
               <MappingFragment StoreEntitySet="tb_Cart">
@@ -1721,7 +1692,7 @@
               <MappingFragment StoreEntitySet="tb_ExportWareHouse">
                 <ScalarProperty Name="ExportWareHouseId" ColumnName="ExportWareHouseId" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
                 <ScalarProperty Name="NhanVienId" ColumnName="NhanVienId" />
@@ -1736,7 +1707,7 @@
                 <ScalarProperty Name="IdChucNang" ColumnName="IdChucNang" />
                 <ScalarProperty Name="TenChucNang" ColumnName="TenChucNang" />
                 <ScalarProperty Name="MaChucNang" ColumnName="MaChucNang" />
-                <ScalarProperty Name="Createby" ColumnName="Createby" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
@@ -1821,11 +1792,10 @@
                 <ScalarProperty Name="ProductCompanyId" ColumnName="ProductCompanyId" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
                 <ScalarProperty Name="Alias" ColumnName="Alias" />
-                <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1835,7 +1805,7 @@
                 <ScalarProperty Name="ProductDetaiId" ColumnName="ProductDetaiId" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
                 <ScalarProperty Name="Alias" ColumnName="Alias" />
@@ -1851,9 +1821,10 @@
                 <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
                 <ScalarProperty Name="OrigianlPrice" ColumnName="OrigianlPrice" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="TypeProduct" ColumnName="TypeProduct" />
-                <ScalarProperty Name="ProductCompanyId" ColumnName="ProductCompanyId" />
                 <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="TypeProduct" ColumnName="TypeProduct" />
+                <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
+                <ScalarProperty Name="ProductCompanyId" ColumnName="ProductCompanyId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1922,7 +1893,7 @@
               <MappingFragment StoreEntitySet="tb_Return">
                 <ScalarProperty Name="ReturnId" ColumnName="ReturnId" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="Confirm" ColumnName="Confirm" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
                 <ScalarProperty Name="IdKhachHang" ColumnName="IdKhachHang" />
@@ -1946,7 +1917,7 @@
               <MappingFragment StoreEntitySet="tb_Review">
                 <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
                 <ScalarProperty Name="ProductDetaiId" ColumnName="ProductDetaiId" />
@@ -1958,7 +1929,7 @@
               <MappingFragment StoreEntitySet="tb_ReviewDetail">
                 <ScalarProperty Name="ReviewDetailId" ColumnName="ReviewDetailId" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
@@ -1992,7 +1963,9 @@
                 <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
                 <ScalarProperty Name="Luong" ColumnName="Luong" />
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Clock" ColumnName="Clock" />
                 <ScalarProperty Name="IdChucNang" ColumnName="IdChucNang" />
@@ -2017,7 +1990,7 @@
                 <ScalarProperty Name="PhanTramGiam" ColumnName="PhanTramGiam" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
                 <ScalarProperty Name="UsedBy" ColumnName="UsedBy" />
@@ -2033,7 +2006,7 @@
                 <ScalarProperty Name="WarehouseId" ColumnName="WarehouseId" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
               </MappingFragment>
