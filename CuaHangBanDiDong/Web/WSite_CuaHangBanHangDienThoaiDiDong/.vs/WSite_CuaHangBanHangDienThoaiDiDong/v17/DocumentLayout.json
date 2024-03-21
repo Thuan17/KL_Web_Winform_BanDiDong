@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|d:\\@khoaluankysu\\cuahangbandidong\\web\\wsite_cuahangbanhangdienthoaididong\\wsite_cuahangbanhangdienthoaididong\\content\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|solutionrelative:wsite_cuahangbanhangdienthoaididong\\content\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\wsite_cuahangbanhangdienthoaididong\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|solutionrelative:wsite_cuahangbanhangdienthoaididong\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|d:\\@khoaluankysu\\cuahangbandidong\\web\\wsite_cuahangbanhangdienthoaididong\\wsite_cuahangbanhangdienthoaididong\\views\\shared\\_layoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|d:\\@khoaluankysu\\cuahangbandidong\\web\\wsite_cuahangbanhangdienthoaididong\\wsite_cuahangbanhangdienthoaididong\\content\\css\\navlayout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|solutionrelative:wsite_cuahangbanhangdienthoaididong\\content\\css\\navlayout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\wsite_cuahangbanhangdienthoaididong\\views\\shared\\_layoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|solutionrelative:wsite_cuahangbanhangdienthoaididong\\views\\shared\\_layoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|d:\\@khoaluankysu\\cuahangbandidong\\web\\wsite_cuahangbanhangdienthoaididong\\wsite_cuahangbanhangdienthoaididong\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\wsite_cuahangbanhangdienthoaididong\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|solutionrelative:wsite_cuahangbanhangdienthoaididong\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|d:\\@khoaluankysu\\cuahangbandidong\\web\\wsite_cuahangbanhangdienthoaididong\\wsite_cuahangbanhangdienthoaididong\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C448BF04-ACE5-46BF-B38E-E16193E63A5D}|WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong.csproj|solutionrelative:wsite_cuahangbanhangdienthoaididong\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LayOut.css",
-              "DocumentMoniker": "D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong\\Content\\CSS\\LayOut.css",
-              "RelativeDocumentMoniker": "WSite_CuaHangBanHangDienThoaiDiDong\\Content\\CSS\\LayOut.css",
-              "ToolTip": "D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong\\Content\\CSS\\LayOut.css",
-              "RelativeToolTip": "WSite_CuaHangBanHangDienThoaiDiDong\\Content\\CSS\\LayOut.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "NavLayOut.css",
+              "DocumentMoniker": "D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong\\Content\\CSS\\NavLayOut.css",
+              "RelativeDocumentMoniker": "WSite_CuaHangBanHangDienThoaiDiDong\\Content\\CSS\\NavLayOut.css",
+              "ToolTip": "D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong\\Content\\CSS\\NavLayOut.css",
+              "RelativeToolTip": "WSite_CuaHangBanHangDienThoaiDiDong\\Content\\CSS\\NavLayOut.css",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACYAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-03-20T16:38:43.292Z",
+              "WhenOpened": "2024-03-21T04:10:31.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "WSite_CuaHangBanHangDienThoaiDiDong\\Views\\Home\\Index.cshtml",
@@ -56,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WSite_CuaHangBanHangDienThoaiDiDong\\Controllers\\HomeController.cs",
@@ -69,13 +69,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "_LayoutPage.cshtml",
               "DocumentMoniker": "D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong\\Views\\Shared\\_LayoutPage.cshtml",
               "RelativeDocumentMoniker": "WSite_CuaHangBanHangDienThoaiDiDong\\Views\\Shared\\_LayoutPage.cshtml",
               "ToolTip": "D:\\@KhoaLuanKySu\\CuaHangBanDiDong\\Web\\WSite_CuaHangBanHangDienThoaiDiDong\\WSite_CuaHangBanHangDienThoaiDiDong\\Views\\Shared\\_LayoutPage.cshtml",
               "RelativeToolTip": "WSite_CuaHangBanHangDienThoaiDiDong\\Views\\Shared\\_LayoutPage.cshtml",
-              "ViewState": "AQIAAA8BAAAAAAAAAAAAAC8BAAB4AAAA",
+              "ViewState": "AQIAAE8BAAAAAAAAAAAmwGEBAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-03-20T15:50:01.14Z",
               "EditorCaption": ""

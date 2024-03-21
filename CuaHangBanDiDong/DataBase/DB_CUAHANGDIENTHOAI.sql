@@ -384,11 +384,24 @@ create table tb_ReturnDetail (
 	ProductDetaiId int
 )
 go
+------------------------------------Voucher
+create table tb_Voucher (
+	VoucherId int IDENTITY(1,1) NOT NULL primary key ,
+	Code char(30),
+	PhanTramGiam int , 
+	Title nvarchar(250),
+	CreatedBy nvarchar(250),
+	CreateDate DateTime ,
+	ModifiedDate datetime ,
+	Modifeby nvarchar(max),
+	UsedBy nvarchar(250),
+	UsedDate DateTime ,
+	Quantity int ,
+	OrderId int 
+)
+go
 
-alter table tb_Return
-add constraint ReturntoKhachHang
-foreign key (IdKhachHang)
-references tb_KhachHang
+
 
 
 
@@ -559,3 +572,10 @@ alter table tb_Return
 add constraint ReturntoKhachHang
 foreign key (IdKhachHang)
 references tb_KhachHang
+
+------------------ FK_Voucher
+
+alter table tb_Voucher
+add constraint VouchertoOrder
+foreign key (OrderId)
+references tb_Order

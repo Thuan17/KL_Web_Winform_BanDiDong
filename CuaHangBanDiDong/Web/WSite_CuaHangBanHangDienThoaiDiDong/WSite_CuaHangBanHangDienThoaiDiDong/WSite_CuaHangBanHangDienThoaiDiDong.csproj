@@ -104,7 +104,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\CSS\LayOut.css" />
+    <Content Include="Content\CSS\NavLayOut.css" />
     <Content Include="Content\CSS\Tem\ajax-loader.gif" />
     <Content Include="Content\CSS\Tem\bootstrap.min.css" />
     <Content Include="Content\CSS\Tem\style.css" />
@@ -166,6 +166,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="images\WEBP\8-3-mainmenu-ipad-gen-10-9190_1710474057.webp" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
