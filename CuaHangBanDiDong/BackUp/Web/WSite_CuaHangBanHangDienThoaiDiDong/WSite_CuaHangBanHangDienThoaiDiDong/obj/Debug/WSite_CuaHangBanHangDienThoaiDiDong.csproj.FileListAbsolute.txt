@@ -78,3 +78,5 @@ D:\@KhoaLuanKySu\CuaHangBanDiDong\Web\WSite_CuaHangBanHangDienThoaiDiDong\WSite_
 D:\@KhoaLuanKySu\CuaHangBanDiDong\Web\WSite_CuaHangBanHangDienThoaiDiDong\WSite_CuaHangBanHangDienThoaiDiDong\bin\EntityFramework.SqlServer.xml
 D:\@KhoaLuanKySu\CuaHangBanDiDong\Web\WSite_CuaHangBanHangDienThoaiDiDong\WSite_CuaHangBanHangDienThoaiDiDong\bin\PagedList.xml
 D:\@KhoaLuanKySu\CuaHangBanDiDong\Web\WSite_CuaHangBanHangDienThoaiDiDong\WSite_CuaHangBanHangDienThoaiDiDong\bin\PagedList.Mvc.xml
+D:\@KhoaLuanKySu\CuaHangBanDiDong\Web\WSite_CuaHangBanHangDienThoaiDiDong\WSite_CuaHangBanHangDienThoaiDiDong\bin\CKFinder.dll
+D:\@KhoaLuanKySu\CuaHangBanDiDong\Web\WSite_CuaHangBanHangDienThoaiDiDong\WSite_CuaHangBanHangDienThoaiDiDong\bin\CKFinder.pdb

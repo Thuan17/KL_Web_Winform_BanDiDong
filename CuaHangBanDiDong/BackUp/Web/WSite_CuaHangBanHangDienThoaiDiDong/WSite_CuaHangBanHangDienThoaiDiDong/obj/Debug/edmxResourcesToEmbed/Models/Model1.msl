@@ -1,17 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="CUAHANGDIENTHOAIModelStoreContainer" CdmEntityContainer="CUAHANGDIENTHOAIEntities">
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="CUAHANGDIENTHOAIModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_Cart">
       <EntityTypeMapping TypeName="CUAHANGDIENTHOAIModel.tb_Cart">
         <MappingFragment StoreEntitySet="tb_Cart">
@@ -38,7 +27,7 @@
         <MappingFragment StoreEntitySet="tb_ExportWareHouse">
           <ScalarProperty Name="ExportWareHouseId" ColumnName="ExportWareHouseId" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
           <ScalarProperty Name="NhanVienId" ColumnName="NhanVienId" />
@@ -53,7 +42,7 @@
           <ScalarProperty Name="IdChucNang" ColumnName="IdChucNang" />
           <ScalarProperty Name="TenChucNang" ColumnName="TenChucNang" />
           <ScalarProperty Name="MaChucNang" ColumnName="MaChucNang" />
-          <ScalarProperty Name="Createby" ColumnName="Createby" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
@@ -138,11 +127,10 @@
           <ScalarProperty Name="ProductCompanyId" ColumnName="ProductCompanyId" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
           <ScalarProperty Name="Alias" ColumnName="Alias" />
-          <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -152,7 +140,7 @@
           <ScalarProperty Name="ProductDetaiId" ColumnName="ProductDetaiId" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
           <ScalarProperty Name="Alias" ColumnName="Alias" />
@@ -168,9 +156,10 @@
           <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
           <ScalarProperty Name="OrigianlPrice" ColumnName="OrigianlPrice" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="TypeProduct" ColumnName="TypeProduct" />
-          <ScalarProperty Name="ProductCompanyId" ColumnName="ProductCompanyId" />
           <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="TypeProduct" ColumnName="TypeProduct" />
+          <ScalarProperty Name="ProductCategoryId" ColumnName="ProductCategoryId" />
+          <ScalarProperty Name="ProductCompanyId" ColumnName="ProductCompanyId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -239,7 +228,7 @@
         <MappingFragment StoreEntitySet="tb_Return">
           <ScalarProperty Name="ReturnId" ColumnName="ReturnId" />
           <ScalarProperty Name="Code" ColumnName="Code" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="Confirm" ColumnName="Confirm" />
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="IdKhachHang" ColumnName="IdKhachHang" />
@@ -263,7 +252,7 @@
         <MappingFragment StoreEntitySet="tb_Review">
           <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
           <ScalarProperty Name="ProductDetaiId" ColumnName="ProductDetaiId" />
@@ -275,7 +264,7 @@
         <MappingFragment StoreEntitySet="tb_ReviewDetail">
           <ScalarProperty Name="ReviewDetailId" ColumnName="ReviewDetailId" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
           <ScalarProperty Name="Content" ColumnName="Content" />
@@ -309,7 +298,9 @@
           <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
           <ScalarProperty Name="Luong" ColumnName="Luong" />
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Clock" ColumnName="Clock" />
           <ScalarProperty Name="IdChucNang" ColumnName="IdChucNang" />
@@ -334,7 +325,7 @@
           <ScalarProperty Name="PhanTramGiam" ColumnName="PhanTramGiam" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
           <ScalarProperty Name="UsedBy" ColumnName="UsedBy" />
@@ -350,7 +341,7 @@
           <ScalarProperty Name="WarehouseId" ColumnName="WarehouseId" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="Modifeby" ColumnName="Modifeby" />
         </MappingFragment>

@@ -13,7 +13,7 @@ create table tb_ProductCategory(
 	Icon nvarchar(250) NULL,
 	CreatedBy nvarchar(max) NULL,
 	CreatedDate datetime NOT NULL,
-	ModifiedDate datetime NOT NULL,
+	ModifiedDate datetime  NULL,
 	Modifiedby nvarchar(max) NULL,
 	Alias nvarchar(150) NOT NULL,
 )
@@ -25,12 +25,12 @@ go
 create table tb_ProductCompany(
 	ProductCompanyId int IDENTITY(1,1) not null primary key ,
 	Title nvarchar(max),
-	CreatedBy nvarchar(250),
-	CreateDate DateTime ,
+	CreatedBy nvarchar(max) NULL,
+	CreatedDate datetime NOT NULL,
 	ModifiedDate datetime ,
 	Modifeby nvarchar(max),
 	Alias nvarchar(250)Null,
-	ProductCategoryId int
+
 )
 go
 
@@ -41,8 +41,8 @@ create table tb_ProductDetai(
 	ProductDetaiId int IDENTITY(1,1) not null primary key ,
 	Title nvarchar(max),
 	
-	CreatedBy nvarchar(250),
-	CreateDate DateTime ,
+	CreatedBy nvarchar(max) NULL,
+	CreatedDate datetime NOT NULL,
 	ModifiedDate datetime ,
 	Modifeby nvarchar(max),
 	Alias nvarchar(250)Null,
@@ -60,57 +60,14 @@ create table tb_ProductDetai(
 	PriceSale decimal(18,2),
 	OrigianlPrice decimal(18,2),
 	Quantity int ,
+	Color int ,
 
 	TypeProduct bit ,
-
-	ProductCompanyId int,
-	Color int 
+	ProductCategoryId int,
+	ProductCompanyId int
+	
 )
 go
-alter table tb_ProductDetai 
-add  Color int 
-
-
-
-
-
-
-----San Pham Moi
---drop table tb_ProductNew(
---	ProductNewId int IDENTITY(1,1) not null primary key ,
---	CreatedBy nvarchar(250),
---	CreateDate DateTime ,
---	ModifiedDate datetime ,
---	Modifeby nvarchar(max),
---	Alias nvarchar(250)Null,
---	ProductCode nvarchar(50),
---	Price decimal(18,2),
---	PriceSale decimal(18,2),
---	OrigianlPrice decimal(18,2),
---	Quantity int ,
---	ViewCount int  Not NUll,
---	ProductDetaiId int
---)
---go
-
-
-----Sản phẩm cũ & Máy trôi
---drop table tb_ProducOld(
---	ProducOldId int IDENTITY(1,1) not null primary key ,
---	CreatedBy nvarchar(250),
---	CreateDate DateTime ,
---	ModifiedDate datetime ,
---	Modifeby nvarchar(max),
---	Alias nvarchar(250)Null,
---	ProductCode nvarchar(50),
---	Price decimal(18,2),
---	PriceSale decimal(18,2),
---	OrigianlPrice decimal(18,2),
---	Quantity int ,
---	ViewCount int  Not NUll,
---	ProductDetaiId int
---)
---go
 
 
 --Hệ điều hành & CPU Sản phẩm
@@ -173,18 +130,6 @@ Create table tb_ProductImage(
 go
 
 
-----Hình Sản phẩm cũ
---Create table tb_ProductOldImage(
---	ProductImageId int IDENTITY(1,1) NOT NULL  primary key ,
---	ProducOldId int NOT NULL,
---	Image nvarchar(max) NULL,
---	IsDefault bit NOT NULL,
-	
---)
---go
-
-
-
 
 
 
@@ -204,8 +149,10 @@ create  TABLE tb_Staff(
 	NgayVaoLam date ,
 	Luong decimal(18,2)NOT NULL,
 	GioiTinh nvarchar(7),
-	CreatedDate datetime,
-	ModifiedDate datetime ,
+	CreatedBy nvarchar(max) NULL,
+	CreatedDate datetime NOT NULL,
+	ModifiedBy nvarchar(max) NULL,
+	ModifiedDate datetime NOT NULL,
 	Clock bit,
 	IdChucNang int
 )
@@ -228,8 +175,8 @@ create  table tb_Function (
 	IdChucNang int IDENTITY(1,1) NOT NULL primary key ,
 	TenChucNang nvarchar (max),
 	MaChucNang nvarchar(max),
-	Createby nvarchar(max),
-	CreatedDate datetime,
+	CreatedBy nvarchar(max) NULL,
+	CreatedDate datetime NOT NULL,
 	ModifiedDate datetime,
 	Modifeby nvarchar(max)
 )
@@ -325,8 +272,8 @@ go
 Create table tb_Warehouse(
 	WarehouseId int IDENTITY(1,1) NOT NULL  primary key ,
 	DiaChi nvarchar(250),
-	CreatedBy nvarchar(250),
-	CreateDate DateTime ,
+	CreatedBy nvarchar(max) NULL,
+	CreatedDate datetime NOT NULL,
 	ModifiedDate datetime ,
 	Modifeby nvarchar(max),
 )
@@ -354,8 +301,8 @@ go
 --Xuất Kho
 create table tb_ExportWareHouse(
 	ExportWareHouseId int IDENTITY(1,1) NOT NULL  primary key ,
-	CreatedBy nvarchar(250),
-	CreateDate DateTime ,
+	CreatedBy nvarchar(max) NULL,
+	CreatedDate datetime NOT NULL,
 	ModifiedDate datetime ,
 	Modifeby nvarchar(max),
 	NhanVienId int,
@@ -368,7 +315,7 @@ go
 create table tb_Return (
 	ReturnId int IDENTITY(1,1) not null primary key ,
 	Code nvarchar(max) NOT NULL,
-	CreateDate datetime,
+	CreatedDate datetime,
 	Confirm bit ,
 	OrderId int ,
 	IdKhachHang int,
@@ -392,8 +339,8 @@ create table tb_Voucher (
 	Code char(30),
 	PhanTramGiam int , 
 	Title nvarchar(250),
-	CreatedBy nvarchar(250),
-	CreateDate DateTime ,
+	CreatedBy nvarchar(max) NULL,
+	CreatedDate datetime NOT NULL,
 	ModifiedDate datetime ,
 	Modifeby nvarchar(max),
 	UsedBy nvarchar(250),
@@ -406,8 +353,8 @@ go
 
 create table tb_Review (
 	ReviewId int IDENTITY(1,1) NOT NULL primary key ,
-	CreatedBy nvarchar(250),
-	CreateDate DateTime ,
+	CreatedBy nvarchar(max) NULL,
+	CreatedDate datetime NOT NULL,
 	ModifiedDate datetime ,
 	Modifeby nvarchar(max),
 	ProductDetaiId int 
@@ -417,8 +364,8 @@ go
 
 create table tb_ReviewDetail (
 	ReviewDetailId int IDENTITY(1,1) NOT NULL primary key ,
-	CreatedBy nvarchar(250),
-	CreateDate DateTime ,
+	CreatedBy nvarchar(max) NULL,
+	CreatedDate datetime NOT NULL,
 	ModifiedDate datetime ,
 	Modifeby nvarchar(max),
 	Content nvarchar (350),
@@ -433,10 +380,14 @@ go
 --====================================================================================FK============================================================
 
 --San Pham
-alter table tb_ProductCompany
-add constraint ProductstoProductCategory
+alter table tb_ProductDetai
+add constraint ProductDetaitoProductCategory
 foreign key (ProductCategoryId)
 references tb_ProductCategory 
+
+
+
+
 
 
 alter table  tb_ProductDetai

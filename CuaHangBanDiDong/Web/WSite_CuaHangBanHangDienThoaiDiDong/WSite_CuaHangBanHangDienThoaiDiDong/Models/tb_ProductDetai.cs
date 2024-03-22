@@ -51,6 +51,7 @@ namespace WSite_CuaHangBanHangDienThoaiDiDong.Models
         public Nullable<bool> TypeProduct { get; set; }
         public Nullable<int> ProductCategoryId { get; set; }
         public Nullable<int> ProductCompanyId { get; set; }
+        public string Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_CartItem> tb_CartItem { get; set; }

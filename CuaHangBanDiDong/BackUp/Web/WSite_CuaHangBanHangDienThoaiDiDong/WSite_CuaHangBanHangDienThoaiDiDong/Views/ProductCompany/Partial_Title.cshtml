@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WSite_CuaHangBanHangDienThoaiDiDong.Models.tb_ProductCompany>
+
+@if (Model.Any() && Model != null)
+{
+    foreach (var item in Model)
+    {
+        <a href="#@item.Title" class="p-l-1">
+            <span id="SanPham">
+                @item.Title
+            </span>
+        </a>
+    }
+}
+else
+{
+    <p>Chưa có sản phẩm</p>
+}
+
+
+
+

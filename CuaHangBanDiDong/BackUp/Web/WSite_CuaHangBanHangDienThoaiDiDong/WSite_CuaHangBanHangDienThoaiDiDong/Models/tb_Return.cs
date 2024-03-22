@@ -22,7 +22,7 @@ namespace WSite_CuaHangBanHangDienThoaiDiDong.Models
     
         public int ReturnId { get; set; }
         public string Code { get; set; }
-        public Nullable<System.DateTime> CreateDate { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<bool> Confirm { get; set; }
         public Nullable<int> OrderId { get; set; }
         public Nullable<int> IdKhachHang { get; set; }
