@@ -31,7 +31,10 @@
 
 
     <!---SweetAlter-->
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <!---SweetAlter-->
+    <!--<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">-->
 
     @*@Icon@*@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -169,7 +172,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="http://localhost:59938/" class="brand-link">
+            <a href="/Home/index" class="brand-link">
                 <img src="~/Content/clients/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Web bán Hàng</span>
             </a>
@@ -186,11 +189,11 @@
                         @*<a href="#" class="d-block">Alexander Pierce</a>*@
 
                         <!--@{
-//var user = (WSite_ShowRoom_CtyThoiTrang.Models.tb_NhanVien)HttpContext.Current.Session["user"];
-                            <apan>
-                                user.TenNhanVien
-                            </apan>
-                        }-->
+                        //var user = (WSite_ShowRoom_CtyThoiTrang.Models.tb_NhanVien)HttpContext.Current.Session["user"];
+                                                    <apan>
+                                                        user.TenNhanVien
+                                                    </apan>
+                                                }-->
 
 
 
@@ -225,15 +228,15 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            @if (TempData["AlterMessage"] != null)
-            {
-                <div class="form-group">
-                    <div class="alter @TempData["AlterType"] hide">
-                        @TempData["AlterMessage"]
+            @*@if (TempData["AlterMessage"] != null)
+                {
+                    <div class="form-group">
+                        <div class="alter @TempData["AlterType"] hide">
+                            @TempData["AlterMessage"]
+                        </div>
                     </div>
-                </div>
 
-            }
+                }*@
             @RenderBody()
         </div>
         <!-- /.content-wrapper -->
@@ -254,45 +257,35 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
 
 
-    <!-- jQuery -->
+    @*jQuery*@
     <script src="~/Content/clients/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
+    @*Bootstrap 4*@
     <script src="~/Content/clients/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Select2 -->
+    @*Select2*@
     <script src="~/Content/clients/plugins/select2/js/select2.full.min.js"></script>
-    <!-- Bootstrap4 Duallistbox -->
+    @*Bootstrap4 Duallistbox*@
     <script src="~/Content/clients/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
-    <!-- InputMask -->
+    @*InputMask*@
     <script src="~/Content/clients/plugins/moment/moment.min.js"></script>
     <script src="~/Content/clients/plugins/inputmask/jquery.inputmask.min.js"></script>
-    <!-- date-range-picker -->
+    @*date-range-picker*@
     <script src="~/Content/clients/plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- bootstrap color picker -->
+    @*bootstrap color picker*@
     <script src="~/Content/clients/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
+    @*Tempusdominus Bootstrap 4*@
     <script src="~/Content/clients/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Bootstrap Switch -->
+    @*Bootstrap Switch*@
     <script src="~/Content/clients/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
-    <!-- BS-Stepper -->
+    @*BS-Stepper*@
     <script src="~/Content/clients/plugins/bs-stepper/js/bs-stepper.min.js"></script>
-    <!-- dropzonejs -->
+    @*dropzonejs*@
     <script src="~/Content/clients/plugins/dropzone/min/dropzone.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-    <!-- AdminLTE App -->
+    @*AdminLTE App*@
     <script src="~/Content/clients/dist/js/adminlte.min.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-    <script src="~/Scripts/autoNumeric-1.9.45.js"></script>
+    <!--<-->@*script src="~/Scripts/jquery-3.7.1.js"></script>
+        <script src="~/Scripts/jquery-3.7.1.min.js"></script>*@
 
 
 
@@ -304,8 +297,15 @@
 
 
 
-    <script src="~/Content/ckeditor/ckeditor.js"></script>
+
+
+
+    <script src="~/Scripts/autoNumeric-1.9.45.js"></script>
+    <script src="~/Content/ckeditor/ckeditor/ckeditor.js"></script>
     <script src="~/Content/ckfinder/ckfinder/ckfinder.js"></script>
+
+    @*<script src="~/Content/ckeditor/ckeditor.js"></script>
+        <script src="~/Content/ckfinder/ckfinder/ckfinder.js"></script>*@
     @RenderSection("scripts", required: false)
 </body>
 </html>

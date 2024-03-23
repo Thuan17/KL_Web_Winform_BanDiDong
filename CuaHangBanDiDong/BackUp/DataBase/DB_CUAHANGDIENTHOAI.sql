@@ -35,7 +35,6 @@ create table tb_ProductCompany(
 go
 
 
-
 --Sản phẩm gì vd : iphone 11 & iphone 12
 create table tb_ProductDetai(
 	ProductDetaiId int IDENTITY(1,1) not null primary key ,
@@ -64,8 +63,8 @@ create table tb_ProductDetai(
 
 	TypeProduct bit ,
 	ProductCategoryId int,
-	ProductCompanyId int
-	
+	ProductCompanyId int,
+	Image nvarchar(250)
 )
 go
 

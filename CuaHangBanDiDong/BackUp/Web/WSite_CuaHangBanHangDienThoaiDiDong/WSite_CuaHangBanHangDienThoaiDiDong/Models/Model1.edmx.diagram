@@ -4,7 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0263ac63801a46fd9a677e73aa56427a" Name="Diagram1">
+      <Diagram DiagramId="e5085bc442e7433bbcb3f3b3942b9c21" Name="Diagram1">
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_Cart" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_CartItem" Width="1.5" PointX="8.25" PointY="15.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ExportWareHouse" Width="1.5" PointX="16.25" PointY="13.75" IsExpanded="true" />
@@ -14,7 +15,7 @@
         <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_OrderDetail" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductCategory" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductCompany" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetai" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetai" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetailConnect" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
         <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetailMemory" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CUAHANGDIENTHOAIModel.tb_ProductDetailPin" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />

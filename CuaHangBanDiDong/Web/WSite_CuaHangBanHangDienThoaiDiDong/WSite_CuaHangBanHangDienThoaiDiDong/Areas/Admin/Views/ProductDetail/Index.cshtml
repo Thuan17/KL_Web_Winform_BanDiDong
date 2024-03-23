@@ -53,7 +53,7 @@
 
             <table class="table table-hover">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th><input type="checkbox" id="SelectAll" /></th>
                         <th>STT</th>
                         <th>Hình ảnh</th>
@@ -62,9 +62,11 @@
                         <th>Hãng</th>
                         <th>Giá</th>
                         <th>Ngày tạo</th>
-                        <th>Home</th>
-                        <th>Sale</th>
                         <th>Hiển thị</th>
+                        <th>Trang chủ</th>
+                        <th>Hot</th>
+                        <th>Nổi bật</th>
+                        <th>Khuyến mãi</th>
 
                         <th style="width:150px;"></th>
                     </tr>
@@ -75,43 +77,95 @@
                         var i = ((ViewBag.Page - 1) * ViewBag.PageSize) + 1;
                         foreach (var item in Model)
                         {
-                            var strCheck = item.IsActive.GetValueOrDefault() ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                            var strCheckIsActive = item.IsActive.GetValueOrDefault() ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
                             var strCheckHome = item.IsHome.GetValueOrDefault() ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                            var strCheckHot = item.IsHot.GetValueOrDefault() ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                            var strCheckIsFeature = item.IsFeature.GetValueOrDefault() ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
                             var strCheckSale = item.IsSale.GetValueOrDefault() ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+
                             var strImg = "";
                             var CheckImage = item.tb_ProductImage.FirstOrDefault(x => x.IsDefault);
                             if (CheckImage != null)
                             {
                                 strImg = CheckImage.Image;
                             }
-                            <tr id="trow_@item.ProductDetaiId">
-                                <td><input type="checkbox" class="cbkItem" value="@item.ProductDetaiId" /></td>
-                                <td>@i</td>
-                                <td><img class="imgproduct" data-id="@item.ProductDetaiId" src="@strImg" width="50" /></td>
-                                <td>@item.Title</td>
-                                <td>@item.tb_ProductCategory.Title</td>
-                                <td>
-                                    @item.tb_ProductCompany.Title
-                                    @*@Html.Action("Partail_ProductDetail", "Product", new { id = item.ProductId })*@
-                                </td>
-                                <td>@WSite_CuaHangBanHangDienThoaiDiDong.Common.Common.FormatNumber(item.Price)</td>
-                                <td>@*@item.CreateDate.ToString("dd/MM/yyyy")*@</td>
-                                <td class="text-center">
-                                    <a href='#' data-id="@item.ProductDetaiId" class="btnHome">@Html.Raw(strCheckHome)</a>
-                                </td>
-                                <td class="text-center">
-                                    <a href='#' data-id="@item.ProductDetaiId" class="btnSale">@Html.Raw(strCheckSale)</a>
-                                </td>
-                                <td class="text-center">
-                                    <a href='#' data-id="@item.ProductDetaiId" class="btnActive">@Html.Raw(strCheck)</a>
-                                </td>
-                                <td>
-                                    @*<a href="/admin/Product/edit/@item.ProductId" class="btn btn-sm btn-primary">Sửa</a>
-                                        <a href="#" data-id="@item.ProductId" class="btn btn-sm btn-danger btnDelete">Xóa</a>*@
 
-                                    <a href="/admin/Product/Detail/@item.ProductDetaiId" data-id="@item.ProductDetaiId" class="btn btn-sm btn-primary ">Xem</a>
-                                </td>
-                            </tr>
+                            if (item.IsActive == false)
+                            {
+                                <tr class="text-center opacity-100" id="trow_@item.ProductDetaiId">
+                                    <td><input type="checkbox" class="cbkItem" value="@item.ProductDetaiId" /></td>
+                                    <td>@i</td>
+                                    <td><img class="imgproduct" data-id="@item.ProductDetaiId" src="@strImg" width="50" /></td>
+                                    <td>@item.Title</td>
+                                    <td>@item.tb_ProductCategory.Title</td>
+                                    <td>
+                                        @item.tb_ProductCompany.Title
+                                        @*@Html.Action("Partail_ProductDetail", "Product", new { id = item.ProductId })*@
+                                    </td>
+                                    <td>@WSite_CuaHangBanHangDienThoaiDiDong.Common.Common.FormatNumber(item.Price)</td>
+                                    <td>@*@item.CreatedBy.ToString("dd/MM/yyyy")*@</td>
+                                    <td class="text-center">
+                                        <a href='#' data-id="@item.ProductDetaiId" class="btnIsActive">@Html.Raw(strCheckIsActive)</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href='#' data-id="@item.ProductDetaiId" class="btnIsHome">@Html.Raw(strCheckHome)</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href='#' data-id="@item.ProductDetaiId" class="btnIsHot">@Html.Raw(strCheckHot)</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href='#' data-id="@item.ProductDetaiId" class="btnIsFeature">@Html.Raw(strCheckIsFeature)</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href='#' data-id="@item.ProductDetaiId" class="btnIsSale">@Html.Raw(strCheckSale)</a>
+                                    </td>
+                                    <td>
+                                        @*<a href="/admin/Product/edit/@item.ProductId" class="btn btn-sm btn-primary">Sửa</a>
+                            <a href="#" data-id="@item.ProductId" class="btn btn-sm btn-danger btnDelete">Xóa</a>*@
+
+                                        <a href="/admin/Product/Detail/@item.ProductDetaiId" data-id="@item.ProductDetaiId" class="btn btn-sm btn-primary ">Xem</a>
+                                    </td>
+                                </tr>
+                            }
+                            else
+                            {
+                                <tr class="text-center" id="trow_@item.ProductDetaiId">
+                                    <td><input type="checkbox" class="cbkItem" value="@item.ProductDetaiId" /></td>
+                                    <td>@i</td>
+                                    <td><img class="imgproduct" data-id="@item.ProductDetaiId" src="@strImg" width="50" /></td>
+                                    <td>@item.Title</td>
+                                    <td>@item.tb_ProductCategory.Title</td>
+                                    <td>
+                                        @item.tb_ProductCompany.Title
+                                        @*@Html.Action("Partail_ProductDetail", "Product", new { id = item.ProductId })*@
+                                    </td>
+                                    <td>@WSite_CuaHangBanHangDienThoaiDiDong.Common.Common.FormatNumber(item.Price)</td>
+                                    <td>@*@item.CreatedBy.ToString("dd/MM/yyyy")*@</td>
+                                    <td class="text-center">
+                                        <a href='#' data-id="@item.ProductDetaiId" class="btnIsActive">@Html.Raw(strCheckIsActive)</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href='#' data-id="@item.ProductDetaiId" class="btnIsHome">@Html.Raw(strCheckHome)</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href='#' data-id="@item.ProductDetaiId" class="btnIsHot">@Html.Raw(strCheckHot)</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href='#' data-id="@item.ProductDetaiId" class="btnIsFeature">@Html.Raw(strCheckIsFeature)</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href='#' data-id="@item.ProductDetaiId" class="btnIsSale">@Html.Raw(strCheckSale)</a>
+                                    </td>
+                                    <td>
+                                        @*<a href="/admin/Product/edit/@item.ProductId" class="btn btn-sm btn-primary">Sửa</a>
+                            <a href="#" data-id="@item.ProductId" class="btn btn-sm btn-danger btnDelete">Xóa</a>*@
+
+                                        <a href="/admin/Product/Detail/@item.ProductDetaiId" data-id="@item.ProductDetaiId" class="btn btn-sm btn-primary ">Xem</a>
+                                    </td>
+                                </tr>
+
+                            }
+
                             i++;
                         }
                     }
@@ -232,17 +286,17 @@
                     });
                 }
             });
-            $('body').on('click', '.btnHome', function (e) {
+            $('body').on('click', '.btnIsActive', function (e) {
                 e.preventDefault();
                 var btn = $(this);
                 var id = btn.data("id");
                 $.ajax({
-                    url: '/admin/Product/IsHome',
+                    url: '/admin/ProductDetail/IsActive',
                     type: 'POST',
                     data: { id: id },
                     success: function (rs) {
                         if (rs.success) {
-                            if (rs.IsHome) {
+                            if (rs.isActive) {
                                 btn.html("<i class='fa fa-check text-success'></i>");
 
                             } else {
@@ -254,17 +308,17 @@
                 });
             });
 
-            $('body').on('click', '.btnSale', function (e) {
+            $('body').on('click', '.btnIsHome', function (e) {
                 e.preventDefault();
                 var btn = $(this);
                 var id = btn.data("id");
                 $.ajax({
-                    url: '/admin/Product/IsSale',
+                    url: '/admin/ProductDetail/IsHome',
                     type: 'POST',
                     data: { id: id },
                     success: function (rs) {
                         if (rs.success) {
-                            if (rs.IsSale) {
+                            if (rs.isHome) {
                                 btn.html("<i class='fa fa-check text-success'></i>");
 
                             } else {
@@ -275,17 +329,59 @@
                     }
                 });
             });
-            $('body').on('click', '.btnActive', function (e) {
+            $('body').on('click', '.btnIsHot', function (e) {
                 e.preventDefault();
                 var btn = $(this);
                 var id = btn.data("id");
                 $.ajax({
-                    url: '/admin/Product/IsActive',
+                    url: '/admin/ProductDetail/IsHot',
                     type: 'POST',
                     data: { id: id },
                     success: function (rs) {
                         if (rs.success) {
-                            if (rs.isAcive) {
+                            if (rs.isHot) {
+                                btn.html("<i class='fa fa-check text-success'></i>");
+
+                            } else {
+                                btn.html("<i class='fas fa-times text-danger'></i>");
+                            }
+                        }
+
+                    }
+                });
+            });
+            $('body').on('click', '.btnIsFeature', function (e) {
+                e.preventDefault();
+                var btn = $(this);
+                var id = btn.data("id");
+                $.ajax({
+                    url: '/admin/ProductDetail/IsFeature',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        if (rs.success) {
+                            if (rs.isFeature) {
+                                btn.html("<i class='fa fa-check text-success'></i>");
+
+                            } else {
+                                btn.html("<i class='fas fa-times text-danger'></i>");
+                            }
+                        }
+
+                    }
+                });
+            });
+            $('body').on('click', '.btnIsSale', function (e) {
+                e.preventDefault();
+                var btn = $(this);
+                var id = btn.data("id");
+                $.ajax({
+                    url: '/admin/ProductDetail/IsSale',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        if (rs.success) {
+                            if (rs.isSale) {
                                 btn.html("<i class='fa fa-check text-success'></i>");
 
                             } else {

@@ -34,8 +34,6 @@ create table tb_ProductCompany(
 )
 go
 
-alter table tb_ProductDetai
-add Image nvarchar(250)
 
 --Sản phẩm gì vd : iphone 11 & iphone 12
 create table tb_ProductDetai(
