@@ -1,0 +1,46 @@
+﻿
+<label for="citySelect">Thành phố:</label>
+<select id="citySelect" onchange="loadDistricts()">
+    <option value="">Chọn thành phố</option>
+    <option value="hcm">TP.HCM</option>
+    <option value="bentre">Bến Tre</option>
+    <!-- Thêm các thành phố khác nếu cần -->
+</select>
+<br>
+
+<label for="districtSelect">Quận/Huyện:</label>
+<select id="districtSelect">
+    <option value="">Chưa chọn thành phố</option>
+    <!-- Các quận/huyện của thành phố sẽ được thêm bằng JavaScript -->
+</select>
+<br>
+
+@*<script>
+function loadDistricts() {
+  var citySelect = document.getElementById("citySelect");
+  var districtSelect = document.getElementById("districtSelect");
+  var selectedCity = citySelect.value;
+
+  // Xóa tất cả các tùy chọn trừ tùy chọn mặc định
+  districtSelect.innerHTML = "<option value=''>Chưa chọn thành phố</option>";
+
+  if (selectedCity) {
+    // Gửi yêu cầu AJAX để lấy danh sách các quận/huyện của thành phố được chọn
+    var xhr = new XMLHttpRequest();
+      xhr.open("GET", "/Store/GetDistricts/" + selectedCity, true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var districts = JSON.parse(xhr.responseText);
+        // Thêm các quận/huyện vào trình chọn
+        districts.forEach(function(district) {
+          var option = document.createElement("option");
+          option.text = district.name;
+          option.value = district.id;
+          districtSelect.add(option);
+        });
+      }
+    };
+    xhr.send();
+  }
+}
+</script>*@

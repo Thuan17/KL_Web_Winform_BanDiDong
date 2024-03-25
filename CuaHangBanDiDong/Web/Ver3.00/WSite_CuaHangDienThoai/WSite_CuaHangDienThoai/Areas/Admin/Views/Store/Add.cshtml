@@ -1,0 +1,185 @@
+﻿@model WSite_CuaHangDienThoai.Models.tb_Store
+@{
+    ViewBag.Title = "Thêm cửa hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+
+@section naviheader{
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin" class="nav-link">Trang chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/news" class="nav-link">Cửa hàng</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Thêm mới</a>
+        </li>
+    </ul>
+}
+
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Thêm Loại Sản Phẩm</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Thêm Cửa Hàng</a></li>
+                    <li class="breadcrumb-item active">Thêm mới</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+
+@*@Html.Action("Partial_Add", "Store")*@
+
+
+
+<label for="citySelect">Thành phố:</label>
+<select id="citySelect">
+    <option value="">Chọn thành phố</option>
+    <option value="hcm">TP.HCM</option>
+    <option value="bentre">Bến Tre</option>
+    <!-- Add other cities as needed -->
+</select>
+<br>
+
+<label for="districtSelect">Quận/Huyện:</label>
+<select id="districtSelect">
+    <option value="">Chưa chọn thành phố</option>
+</select>
+<br>
+
+
+
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Thông tin thêm mới Tin tức</h3>
+        </div>
+        <div class="card-body">
+            <div class="bs-stepper-content">
+                @using (Html.BeginForm("Add", "Store", FormMethod.Post, new { }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <!-- your steps content here -->
+                    <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Tiêu đề</label>
+                            @Html.TextBoxFor(x => x.DiChi, new { @class = "form-control", @placeholder = "Địa chỉ" })
+                            @Html.ValidationMessageFor(x => x.DiChi, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <a href="/Admin/ProductCategory/index" class="btn btn-danger">Quay lại</a>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+        <div class="card-footer">
+
+        </div>
+
+    </div>
+
+
+</section>
+
+@section scripts{
+
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            //var selectedCity = $(this).val();
+            //var districtSelect = $('#districtSelect');
+
+            //// Xóa tất cả các tùy chọn trừ tùy chọn mặc định
+            //districtSelect.empty().append("<option value=''>Chưa chọn thành phố</option>");
+
+            //if (selectedCity) {
+            //    $.ajax({
+            //        url: '/Store/GetDistricts',
+            //        type: 'GET',
+            //        data: { city: selectedCity }, // Gửi giá trị thành phố được chọn
+            //        success: function (districts) {
+            //            $.each(districts, function (index, district) {
+            //                        districtSelect.append("<option value='" + district.id + "'>" + district.name + "</option>");
+            //                    });
+            //        }
+            //    });
+
+
+
+            //    //$.ajax({
+            //    //    url: '/Store/GetDistricts/' + selectedCity,
+            //    //    type: 'GET',
+            //    //    success: function (districts) {
+            //    //        // Thêm các quận/huyện vào trình chọn
+            //    //        $.each(districts, function (index, district) {
+            //    //            districtSelect.append("<option value='" + district.id + "'>" + district.name + "</option>");
+            //    //        });
+            //    //    }
+            //    //});
+            //}
+
+
+            $('#citySelect').change(function () {
+                var selectedCity = $(this).val();
+                var districtSelect = $('#districtSelect');
+
+                // Clear all options except the default one
+                districtSelect.empty().append("<option value=''>Chưa chọn thành phố</option>");
+
+                if (selectedCity) {
+                    $.ajax({
+                        url: '/Store/GetDistricts/' ,
+                        type: 'GET',
+                        data: { city: selectedCity }, 
+                        success: function (districts) {
+                            $.each(districts, function (index, district) {
+                                districtSelect.append("<option value='" + district.id + "'>" + district.name + "</option>");
+                            });
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Error sending AJAX request:", status, error);
+                        }
+                    });
+                }
+            });
+
+        });
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+}
+
+
+
+
